@@ -1,0 +1,102 @@
+There are older events to load. 
+Load more.
++ read -r -d '' key val
++ printf '%s="%s"\n' REGISTRATION_DATA ''
++ IFS==
++ read -r -d '' key val
++ printf '%s="%s"\n' COORDINATION_SERVICE_LEADER_PORT ''
++ IFS==
++ read -r -d '' key val
++ printf '%s="%s"\n' _ /usr/bin/env
++ IFS==
++ read -r -d '' key val
++ '[' 0 -eq 1 ']'
++ main
++ setup_basic_variables
++ data_dir=/var/opt/tableau/tableau_server
+++ readlink -m /var/opt/tableau/tableau_server/..
++ data_dir_parent=/var/opt/tableau
++ package_dir=/opt/tableau/tableau_server/packages
++ bin_dir=/opt/tableau/tableau_server/packages/bin.20212.21.0610.0336
++ supervisord_dir=/var/opt/tableau/tableau_server/supervisord
++ data_dir_ready=false
++ '[' -d /var/opt/tableau/tableau_server ']'
++ setup_data_dir
++ '[' -d /var/opt/tableau/tableau_server ']'
++ mkdir --parents /var/opt/tableau/tableau_server/logs
++ mkdir --parents /var/opt/tableau/tableau_server/config
++ mkdir --parents /var/opt/tableau/tableau_server/data/tabsvc
++ mkdir --parents /var/opt/tableau/tableau_server/temp
++ '[' 0 -eq 1 ']'
++ chown -R tableau:tableau /var/opt/tableau/tableau_server
++ setup_remote_user
++ set +ex
+Setting up remote user
++ setup_supervisord
++ mkdir -p /var/opt/tableau/tableau_server/supervisord/units
++ false
++ start_init_service=true
++ env_vars=()
++ '[' -n '' ']'
++ '[' -n '' ']'
++ '[' -n '' ']'
+++ IFS=,
+++ echo ''
++ env_vars_string=
++ cat
++ cat
++ cat
++ chown -R tableau:tableau /var/opt/tableau/tableau_server/supervisord
++ set_permissions_for_pgsql_dir
++ false
++ clean_temp_files
++ false
++ create_files
++ '[' '!' -z '' ']'
++ '[' '!' -z '' ']'
++ '[' '!' -z '' ']'
++ '[' -d /var/opt/tableau/tableau_server ']'
++ '[' '!' -f /var/opt/tableau/tableau_server/velocity.log ']'
++ touch /var/opt/tableau/tableau_server/velocity.log
++ chown tableau:tableau /var/opt/tableau/tableau_server/velocity.log
++ echo bcc0135285f749418d1c473f10e04c6f-1379412601
++ validate_config_file
+++ jq 'select(.topologyVersion.nodes)|.topologyVersion.nodes|keys|length' /docker/config/config.json
++ node_count=
+++ jq '[select(.topologyVersion.nodes) | .topologyVersion.nodes | to_entries[] | select(any(.value[]; has("appzookeeper"))) | .key ] | length' /docker/config/config.json
++ coordination_serv_nodes_count=0
+++ jq -r 'select(.topologyVersion.nodes)| .topologyVersion.nodes | to_entries[] | select(any(.value[]; has("appzookeeper"))) | .key' /docker/config/config.json
++ coordination_serv_nodes=
++ '[' '!' -z '' ']'
++ set_lease_time
++ cp /docker/config/tabsvc.yml /var/opt/tableau/tableau_server/config
++ '[' -n '' ']'
++ copy_metadata_to_supervisord_dir
++ cp /docker/.metadata.conf /var/opt/tableau/tableau_server/supervisord/.metadata.conf
++ '[' -f /docker/.upgrade_metadata.conf ']'
++ exec supervisord -c /var/opt/tableau/tableau_server/supervisord/supervisord.conf
+2021-08-26 19:39:44,899 INFO Included extra file "/var/opt/tableau/tableau_server/supervisord/units/run-tableau-server.conf" during parsing
+2021-08-26 19:39:44,899 INFO Included extra file "/var/opt/tableau/tableau_server/supervisord/units/stack-traces-from-coredumps.conf" during parsing
+2021-08-26 19:39:44,903 INFO RPC interface 'supervisor' initialized
+2021-08-26 19:39:44,903 CRIT Server 'unix_http_server' running without any HTTP authentication checking
+2021-08-26 19:39:44,903 INFO supervisord started with pid 1
+2021-08-26 19:39:45,906 INFO spawned: 'run-tableau-server' with pid 30
+2021-08-26 19:39:45,907 INFO spawned: 'stack-traces-from-coredumps' with pid 31
+2021-08-26 19:39:46,945 INFO success: run-tableau-server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2021-08-26 19:39:46,945 INFO success: stack-traces-from-coredumps entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2021-08-26 19:39:56,745 INFO spawned: 'appzookeeper_0' with pid 88
+2021-08-26 19:39:57,912 INFO success: appzookeeper_0 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2021-08-26 19:40:14,238 INFO spawned: 'licenseservice_0' with pid 247
+2021-08-26 19:40:15,606 INFO success: licenseservice_0 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2021-08-26 19:40:15,632 INFO spawned: 'clientfileservice_0' with pid 289
+2021-08-26 19:40:15,750 INFO spawned: 'activationservice_0' with pid 301
+2021-08-26 19:40:17,093 INFO success: activationservice_0 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2021-08-26 19:40:17,094 INFO success: clientfileservice_0 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2021-08-26 19:40:25,900 INFO waiting for run-tableau-server, licenseservice_0, stack-traces-from-coredumps, activationservice_0, appzookeeper_0, clientfileservice_0 to die
+2021-08-26 19:40:25,909 INFO exited: run-tableau-server (exit status 10; not expected)
+2021-08-26 19:40:26,073 INFO stopped: clientfileservice_0 (exit status 143)
+2021-08-26 19:40:26,093 INFO stopped: appzookeeper_0 (exit status 143)
+2021-08-26 19:40:26,473 INFO stopped: activationservice_0 (exit status 143)
+2021-08-26 19:40:26,474 INFO stopped: stack-traces-from-coredumps (terminated by SIGTERM)
+2021-08-26 19:40:26,474 INFO reaped unknown pid 37 (terminated by SIGTERM)
+2021-08-26 19:40:26,474 INFO stopped: licenseservice_0 (exit status 15)
