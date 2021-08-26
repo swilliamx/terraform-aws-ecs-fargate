@@ -5,11 +5,19 @@ resource "aws_security_group" "ecs_fargate_sg" {
 
   # HTTPS API Gateway
   ingress {
-    from_port   = 80
-    to_port     = 80
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
+  from_port = 80
+  to_port = 80
+  protocol = "tcp"
+  cidr_blocks = ["0.0.0.0/0"]
   }
+
+  ingress {
+  from_port = 8080
+  to_port = 8080
+  protocol = "tcp"
+  cidr_blocks = ["0.0.0.0/0"]
+  }
+  
   # Database
   egress {
     from_port   = 0
@@ -22,3 +30,4 @@ resource "aws_security_group" "ecs_fargate_sg" {
     Owner = var.tr_resource_owner
   }
 }
+
